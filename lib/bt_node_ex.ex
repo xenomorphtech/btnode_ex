@@ -23,17 +23,17 @@ defmodule BT.Node do
       end
 
       def log_new(initparams) do
-        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4)
+        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4//1)
         IO.puts("-> #{time} #{__MODULE__} #{prettyprint(initparams)}")
       end
 
       def log_success() do
-        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4)
+        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4//1)
         IO.puts("<- #{time} #{__MODULE__} success")
       end
 
       def log_fail(fail_reason) do
-        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4)
+        time = String.slice("#{NaiveDateTime.utc_now()}", 0..-4//1)
         IO.puts("<- #{time} #{__MODULE__} fail #{inspect(fail_reason)}")
       end
 
